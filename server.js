@@ -17,8 +17,9 @@ app.use(
   })
 );
 app.use(cors({ 
-  origin: '*'
+  origin: 'http://localhost:3000/'
 }));
+
 app.use('/general', generalRouter);
 
 app.use('/users', userRouter);
