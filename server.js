@@ -8,6 +8,7 @@ const userRouter = require('./src/routes/user.route')
 const gruposRouter = require('./src/routes/grupos.route')
 const maestrosRouter = require('./src/routes/maestros.route')
 const tarjetasRouter = require('./src/routes/tarjetas.route')
+var cors = require('cors')
 
 app.use(bodyParser.json());
 app.use(
@@ -15,7 +16,10 @@ app.use(
     extended: true,
   })
 );
-
+app.use(cors({ 
+  origin: "frontend_URL", 
+  credentials: true 
+}));
 app.use('/general', generalRouter);
 
 app.use('/users', userRouter);
