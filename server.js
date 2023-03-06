@@ -17,7 +17,7 @@ app.use(
   })
 );
 app.use(cors({ 
-  origin: "frontend_URL", 
+  origin: '*', 
   credentials: true 
 }));
 app.use('/general', generalRouter);
