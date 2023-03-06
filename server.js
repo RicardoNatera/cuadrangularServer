@@ -17,8 +17,7 @@ app.use(
   })
 );
 app.use(cors({ 
-  origin: '*', 
-  credentials: false 
+  origin: '*'
 }));
 app.use('/general', generalRouter);
 
