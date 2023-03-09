@@ -17,7 +17,7 @@ app.use(
   })
 );
 app.use(cors({ 
-  origin: 'http://localhost:3000'
+  origin: ['http://localhost:3000','https://eloquent-beijinho-3c2d53.netlify.app/']
 }));
 
 app.use((req, res, next) => {
