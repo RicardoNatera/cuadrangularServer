@@ -50,8 +50,7 @@ app.use('/tarjetas', tarjetasRouter);
 
 app.get('/', (req, res) => {
     res.json({'message': 'ok',
-            'headers':res.getHeaders(),
-          'req headers': req.headers()});
+            'headers':res.getHeaders()});
 })
 
 /* Error handler middleware */
