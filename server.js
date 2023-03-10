@@ -25,8 +25,14 @@ app.use((req, res, next) => {
   next();
 });
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", ["*"]);
-  console.log("si pase")
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+
   next();
 });
 
@@ -43,7 +49,9 @@ app.use('/maestros', maestrosRouter);
 app.use('/tarjetas', tarjetasRouter);
 
 app.get('/', (req, res) => {
-    res.json({'message': 'ok'});
+    res.json({'message': 'ok',
+            'headers':res.getHeaders(),
+          'req headers': req.headers()});
 })
 
 /* Error handler middleware */
