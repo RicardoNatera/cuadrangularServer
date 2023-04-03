@@ -9,7 +9,7 @@ const gruposRouter = require('./src/routes/grupos.route')
 const maestrosRouter = require('./src/routes/maestros.route')
 const tarjetasRouter = require('./src/routes/tarjetas.route')
 var cors = require('cors')
-
+//
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
